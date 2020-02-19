@@ -29,21 +29,36 @@ The API can be accessed at `https://app.curationcorp.com/api/graphql`.
 ### Query
 The base query type. 
 
+```
+article(ArticleId: UUID): Article                   // Query an individual article by its ArticleID
+tag(TagId: [Int]): Tag                              // Query an individual tag by its TagId
+theme(ThemeId: ID, limit: Int, offset: Int): Theme  // Query a theme by its ThemeId, optionally adding limit/offset paging
+themes: [Theme]                                     // Query all themes accessible by the users' account. 
+```
+
 ### Article
 A curated news article. 
 
 ```
 type Article implements GenericArticle {
-    Comments: [Comment]
-    ArticleId: ID!
-    Title: String
-    Body: String
-    StoryDate: DateTime
-    PublishedDate: DateTime
-    Tags: [Tag]
-    Related(limit: Int): [Article]
-    Sources: [Source]
-    CurationComment: String
+    ArticleId: ID!                  // The unique identifier of the Article
+    Title: String                   // The title of the Article
+    Body: String                    // An HTML encoded abstract of the source article
+    Comments: [Comment]             // Comments made on the article by approved users. 
+    StoryDate: DateTime             // The DateTime the source article was published
+    PublishedDate: DateTime         // The DateTime the story was published to Curation
+    Tags: [Tag]                     // Tags belonging to the story
+    Related(limit: Int): [Article]  // Related articles, driven by our proprietary similarity algorithim
+    Sources: [Source]               // The underlying source of the article
+  }
+```
+### Source
+The underlying source of an article. 
+```
+ type Source {
+    SourceId: ID!                   // The unique identifier of the Source
+    Title: String                   // The name of the Source publication
+    Url: String                     // A URL to the Source
   }
 ```
 
