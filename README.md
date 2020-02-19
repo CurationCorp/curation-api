@@ -16,7 +16,7 @@ Whilst you can simply append the query as a standard HTTP POST body (see [Exampl
 Clone this repository, `npm install`, then `cd examples`and run `node index.js` with `EMAIL_ADDRESS` and `PASSWORD` environment variables specified. This authenticates with Curation API, retrieves the user's API key and boots a small Express server that listens for connections to `localhost:3000/stories` and returns a JSON object of stories grouped by theme for your account. 
 
 ## Authentication
-Users are via an API key which can either be provided by your Curation representative, or extracted from a successful login response. See [Examples](./examples/index.js) for an implementation of the latter. 
+Users are authenticated via an API key which can either be provided by your Curation representative, or extracted from a successful login response. See [Examples](./examples/index.js) for an implementation of the latter. 
 
 ## Rate limiting
 API users are rate-limited to prevent abuse. Users that fall foul of the rate limiting will receive a `HTTP 429` response.
