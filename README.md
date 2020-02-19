@@ -79,6 +79,7 @@ type Tag {
 ```
 
 ### Theme
+A topic assigned to a Customer as part of their base subscription. All queryable Articles will fall under Themes. 
 
 ``` 
 type Theme  {
