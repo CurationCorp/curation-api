@@ -8,7 +8,7 @@
 
 <h1 align="center">Curation API</h1>
 
-Developers can use a subset of the same API that powers app.curationcorp.com to augment their own applications with Curation data. Curation's customer API exclusively uses [GraphQL](https://graphql.org/) to enable our customers to declaratively specify exactly what they require, deeply nested in a single request. We've found using GraphQL massively speeds up our internal development, and is a really helpful way of expresssing and  querying deeply nested data. 
+Developers can use a subset of the same API that powers [Curation](https://app.curationcorp.com) to augment their own applications with Curation data. Curation's customer API exclusively uses [GraphQL](https://graphql.org/) to enable our customers to declaratively specify exactly what they require, deeply nested in a single request. We've found using GraphQL massively speeds up our internal development, and is a really helpful way of expresssing and  querying deeply nested data. 
 
 Whilst you can simply append the query as a standard HTTP POST body (see [Examples](./examples/index.js)), for production uses we recommend using a GraphQL client such as [Apollo Link](https://github.com/apollographql/apollo-link).
 
