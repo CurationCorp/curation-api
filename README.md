@@ -44,11 +44,9 @@ type Article implements GenericArticle {
     ArticleId: ID!                  // The unique identifier of the Article
     Title: String                   // The title of the Article
     Body: String                    // An HTML encoded abstract of the source article
-    Comments: [Comment]             // Comments made on the article by approved users. 
     StoryDate: DateTime             // The DateTime the source article was published
     PublishedDate: DateTime         // The DateTime the story was published to Curation
     Tags: [Tag]                     // Tags belonging to the story
-    Related(limit: Int): [Article]  // Related articles, driven by our proprietary similarity algorithim
     Sources: [Source]               // The underlying source of the article
   }
 ```
