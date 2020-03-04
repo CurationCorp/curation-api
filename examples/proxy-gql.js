@@ -1,3 +1,5 @@
+//Proxy a GraphQL API call via a thin server. 
+
 const { post } = require("axios");
 const express = require("express");
 const bodyparser = require("body-parser");
