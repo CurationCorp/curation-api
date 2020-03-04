@@ -1,3 +1,4 @@
+//scrape the history of articles your account has access to. 
 const { post } = require("axios");
 const email = process.env.EMAIL_ADDRESS;
 const password = process.env.PASSWORD;
